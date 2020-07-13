@@ -10,7 +10,6 @@
   var lista;
   var voci;
   var x;
-  var i;
   var testo;
   input = document.getElementById("barraRicerca");
   filtro = input.value.toUpperCase();
