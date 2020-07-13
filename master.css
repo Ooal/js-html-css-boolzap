@@ -144,7 +144,9 @@ h4{
  display: flex;
  align-items: center;
  justify-content: space-between;
-
+}
+.contatto.active {
+  background-color: #ededed;
 }
 
 #chat {
@@ -161,9 +163,12 @@ h4{
   overflow-y: auto;
   overflow-x: hidden;
   padding: 30px;
-  display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
+  display: none;
+}
+.messaggi.active {
+  display: flex;
 }
 .invio-messaggi {
   height: 50px;

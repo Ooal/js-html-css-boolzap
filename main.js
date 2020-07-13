@@ -1,10 +1,11 @@
 /*ricerca user*/
+
 /*function pressInvioRicerca(){
   if (event.which == 13) {
     ricercaPerNome();
   }
-}*/
-/*function ricercaPerNome(){
+}
+function ricercaPerNome(){
   var input;
   var filtro;
   var lista;
@@ -30,19 +31,20 @@
   }
 }*/
 
+/*ricerca user*/
 
 
 /*invio e ricezioni messaggi*/
 function addRisposta(){
   var risposta = $('.template-risposta > p').clone();
   risposta.addClass('stilerisposta');
-  var target = $('.messaggi').append(risposta);
+  var target = $('.messaggi.active').append(risposta);
 }
 function addMessage(){
   var message =$('#barraInvio').val();
   var messaggio = $('.template-messaggio > p').clone();
   messaggio.addClass('stilemessaggio').text(message);
-  var target = $('.messaggi').append(messaggio);
+  var target = $('.messaggi.active').append(messaggio);
 }
 function pressInvioMsg (){
   if (event.which == 13) {
@@ -55,9 +57,25 @@ function pressInvioMsg (){
 }
 /*invio e ricezioni messaggi*/
 
+/*cambia chat*/
+function clickUtente(){
+  $('.contatto').removeClass('active');
+  $(this).addClass('active');
+  $('.nomeUtentescelto h4').remove();
+  var nome = $('.contatto.active h4').clone();
+  var target = $('.nomeUtentescelto').append(nome);
+  $('.messaggi').removeClass('active');
+  $($('.messaggi').get($(this).index())).addClass('active');
+}
+/*cambia chat*/
+
+
+
+
 
 function init() {
-/*  $('#barraRicerca').keydown(pressInvioRicerca);*/
+  $('.contatto').click(clickUtente);
+  /*$('#barraRicerca').keydown(pressInvioRicerca);*/
   $('#barraInvio').keydown(pressInvioMsg);
 }
 $(document).ready(init);
