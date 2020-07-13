@@ -81,10 +81,10 @@ h4{
   justify-content: space-between;
 }
 
-#contatti {
+#left-bar {
   float: left;
   width: 30%;
-  height: 790px;
+  height: 640px;
   border-right: solid 1px #9e9e9e;
 }
 #attiva-notifiche {
@@ -122,6 +122,12 @@ h4{
   right: 90%;
   color: #9e9e9e;
 }
+.contatti {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .contatto {
  height: 80px;
  border-bottom: solid 1px #ededed;
@@ -135,6 +141,60 @@ h4{
   float: left;
   width:70%;
   height: 790px;
-  background-image: url(https://www.whatsapptrading.com/wp-content/uploads/2018/10/whatsapp-background.jpg);
+  background-image: url(img/background.png);
   background-blend-mode: lighter;
+  position: relative;
+}
+.messaggi {
+  height: calc(100% - 90px);
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+.invio-messaggi {
+  height: 50px;
+  background-color: #ededed;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 200;
+
+}
+#invio i {
+  color: #9e9e9e;
+  font: 20px;
+}
+#invio {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 40px;
+}
+#barraInvio {
+  width: 90%;
+  height: 75%;
+  padding-inline-start : 20px;
+  border: none;
+  border-radius: 50px;
+  color: #9e9e9e;
+}
+
+.stilerisposta {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  align-self: flex-start;
+  margin: 10px 0;
+}
+.stilemessaggio {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #d5f9ba;
+  margin: 10px 0;
 }
