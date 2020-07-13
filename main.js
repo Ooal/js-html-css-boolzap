@@ -1,18 +1,14 @@
 /*ricerca user*/
-
-/*function pressInvioRicerca(){
-  if (event.which == 13) {
-    ricercaPerNome();
-  }
-}
 function ricercaPerNome(){
   var input;
+  var valore;
   var filtro;
   var lista;
   var voci;
   var x;
   var testo;
   input = document.getElementById("barraRicerca");
+  valore = document.getElementById('barraRicerca').value;
   filtro = input.value.toUpperCase();
   lista = document.getElementById("contatti");
   classi =lista.getElementsByClassName("contatto");
@@ -21,15 +17,12 @@ function ricercaPerNome(){
     x = lista.getElementsByTagName("h4")[i];
     testo = x.textContent || x.innerText;
     if (testo.toUpperCase().indexOf(filtro) > -1) {
-      voci[i].style.display = "";
+      classi[i].style.display = "";
     } else {
       classi[i].style.display = "none";
     }
   }
-  if (input == "") {
-    classi.style.display = "";
-  }
-}*/
+}
 
 /*ricerca user*/
 
@@ -42,17 +35,22 @@ function addRisposta(){
 }
 function addMessage(){
   var message =$('#barraInvio').val();
-  var messaggio = $('.template-messaggio > p').clone();
-  messaggio.addClass('stilemessaggio').text(message);
-  var target = $('.messaggi.active').append(messaggio);
+  if (message != "") {
+    var messaggio = $('.template-messaggio > p').clone();
+    messaggio.addClass('stilemessaggio').text(message);
+    var target = $('.messaggi.active').append(messaggio);
+  }
 }
 function pressInvioMsg (){
   if (event.which == 13) {
     addMessage();
-    $('#barraInvio').val("");
-    setTimeout(function(){
-      addRisposta();
-    },1000);
+    var message =$('#barraInvio').val();
+    if (message != "") {
+      $('#barraInvio').val("");
+      setTimeout(function(){
+        addRisposta();
+      },1000);
+    }
   }
 }
 /*invio e ricezioni messaggi*/
@@ -75,7 +73,7 @@ function clickUtente(){
 
 function init() {
   $('.contatto').click(clickUtente);
-  /*$('#barraRicerca').keydown(pressInvioRicerca);*/
+  ricercaPerNome();
   $('#barraInvio').keydown(pressInvioMsg);
 }
 $(document).ready(init);
