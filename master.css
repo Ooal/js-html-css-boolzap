@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #dadbd5;
+}
+body::before{
+  content: "";
+  height: 127px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  background-color: #009688;
+}
+p {
+  color: #9e9e9e;
+}
+h4{
+  color: #606060;
+}
+.user {
+  width: 50px;
+  height: 50px;
+  background-color: #009688;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.imgUtente {
+  width: 28px;
+}
+.icon {
+  padding: 0 10px;
+}
+.icon i {
+  font-size: 20px;
+  padding: 0 10px;
+  color: #afafaf;
+}
+.dati-interlocutore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#app {
+  position: relative;
+  margin: 1% 15%;
+  background-color: white;
+}
+.top-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #ededed;
+}
+.top-bar-left {
+  float: left;
+  width: 30%;
+  height: 60px;
+  border-right: solid 1px #9e9e9e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar-right {
+  float: left;
+  width: 70%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#contatti {
+  float: left;
+  width: 30%;
+  height: 790px;
+  border-right: solid 1px #9e9e9e;
+}
+#attiva-notifiche {
+  height: 100px;
+  background-color : #9de1fe;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#attiva-notifiche .user{
+  background-color : white;
+}
+.fa-bell-slash {
+  font-size: 18px;
+  color : #9de1fe;
+}
+#cercaUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #ededed;
+  position: relative;
+}
+#cercaUser input {
+  width: 95%;
+  height: 80%;
+  padding-inline-start : 40px;
+  border: none;
+  border-radius: 50px;
+  color: #9e9e9e;
+}
+#cercaUser i {
+  position: absolute;
+  right: 90%;
+  color: #9e9e9e;
+}
+.contatto {
+ height: 80px;
+ border-bottom: solid 1px #ededed;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: white;
+}
+
+#chat {
+  float: left;
+  width:70%;
+  height: 790px;
+  background-image: url(https://www.whatsapptrading.com/wp-content/uploads/2018/10/whatsapp-background.jpg);
+  background-blend-mode: lighter;
+}
