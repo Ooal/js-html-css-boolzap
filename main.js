@@ -73,7 +73,7 @@ function clickUtente(){
 function init() {
   $('.messaggi').on('click', '.fa-angle-down', function() {
     console.log(this);
-    $(this).next('.info-messaggi').toggle();
+    $(this).next('.info-messaggi').slideToggle(100);
   });
   $('.messaggi').on('click', '.delete-message', function() {
     console.log(this);

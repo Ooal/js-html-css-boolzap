@@ -222,21 +222,29 @@ h4, h6{
   background: white;
   position: absolute;
   border-radius: 2px;
-  top: 34px;
+  top: 28px;
   right: 0px;
-  padding: 10px 10px;
   z-index: 3;
   display: none;
   filter: drop-shadow(1px 9px 9px #c1c1c1);
 }
 .delete-message span {
   font-size: 13px;
-  padding: 3px;
+  padding: 5px;
   cursor: pointer;
+  color: #9e9e9e;
+}
+.delete-message:hover {
+  background-color: #9de1fe;
 }
 .info span {
   font-size: 13px;
-  padding: 3px;
+  padding: 5px;
+  cursor: pointer;
+  color: #9e9e9e;
+}
+.info:hover {
+  background-color: #9de1fe;
 }
 .fa-angle-down {
   position: absolute;
