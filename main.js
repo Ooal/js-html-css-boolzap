@@ -71,10 +71,14 @@ function clickUtente(){
 
 
 function init() {
-  /*$('.stilemessaggio .fa-angle-down').click(function() {
-    console.log('ciao');
-    $(this).children('.info-messaggi').toggle();
-  }*/
+  $('.messaggi').on('click', '.fa-angle-down', function() {
+    console.log(this);
+    $(this).next('.info-messaggi').toggle();
+  });
+  $('.messaggi').on('click', '.delete-message', function() {
+    console.log(this);
+    $(this).parent('.info-messaggi').parent('.stilemessaggio').remove();
+  });
   $('.contatto').click(clickUtente);
   ricercaPerNome();
   $('#barraInvio').keyup(pressInvioMsg);
