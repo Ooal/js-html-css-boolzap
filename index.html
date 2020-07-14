@@ -72,9 +72,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Marco</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -86,9 +85,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Luca</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -100,9 +98,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Giovanni</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -114,9 +111,9 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Giorgio</h4>
-                <p>Non poteva sennò...</p>
+
               </div>
             </div>
             <div class="icon">
@@ -128,9 +125,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Martina</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -142,9 +138,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Michele</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -156,9 +151,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Giaocomo</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -170,9 +164,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Luigi</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -184,9 +177,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Francesco</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -198,9 +190,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Fra</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -212,9 +203,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Andrea</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -226,9 +216,8 @@
               <div class="user">
                 <img class="imgUtente" src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="">
               </div>
-              <div>
+              <div class="ultimo-messaggio">
                 <h4>Enrico</h4>
-                <p>Non poteva sennò...</p>
               </div>
             </div>
             <div class="icon">
@@ -262,7 +251,19 @@
 
     </div>
     <div class="template-risposta" style="display:none">
-      <p>Ok!</p>
+      <div id="template">
+        <p>Ok</p>
+        <p id="message-time"></p>
+        <i class="fas fa-angle-down"></i>
+        <div class="info-messaggi-ricevuti">
+         <div class="delete-message">
+           <span>Cancella messaggio</span>
+         </div>
+         <div class="info">
+           <span>Info messaggio</span>
+         </div>
+       </div>
+      </div>
     </div>
     <div class="template-messaggio" style="display:none">
       <div id="template">
@@ -278,6 +279,9 @@
          </div>
        </div>
       </div>
+    </div>
+    <div class="template-ultimo-messaggio" style="display:none">
+      <p></p>
     </div>
     <script src="main.js" charset="utf-8"></script>
   </body>

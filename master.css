@@ -47,7 +47,7 @@ h4, h6{
   margin-right: 15px;
 }
 .imgUtente {
-  width: 51px;
+  width: 52px;
 }
 .icon {
   padding: 0 10px;
@@ -208,6 +208,8 @@ h4, h6{
   background-color: #fff;
   align-self: flex-start;
   margin: 10px 0;
+  position: relative;
+  padding-right: 28px;
 }
 .stilemessaggio {
   position: relative;
@@ -224,6 +226,17 @@ h4, h6{
   border-radius: 2px;
   top: 28px;
   right: 0px;
+  z-index: 3;
+  display: none;
+  filter: drop-shadow(1px 9px 9px #c1c1c1);
+}
+.info-messaggi-ricevuti {
+  width: 150px;
+  background: white;
+  position: absolute;
+  border-radius: 2px;
+  top: 28px;
+  right: -92px;
   z-index: 3;
   display: none;
   filter: drop-shadow(1px 9px 9px #c1c1c1);
@@ -256,6 +269,9 @@ h4, h6{
   display: none;
 }
 .stilemessaggio:hover .fa-angle-down{
+  display: block;
+}
+.stilerisposta:hover .fa-angle-down{
   display: block;
 }
 #message-time {

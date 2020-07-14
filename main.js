@@ -23,29 +23,42 @@
 
 /*invio e ricezioni messaggi*/
 function addRisposta(){
-  var risposta = $('.template-risposta > p').clone();
+  var risposta = $('.template-risposta > #template').clone();
   risposta.addClass('stilerisposta');
+  var dt = new Date();
+  var time = dt.getHours() + ":" + dt.getMinutes();
+  risposta.find('#message-time').text(time);
   var target = $('.messaggi.active').append(risposta);
 }
 function addMessage(){
   var message =$('#barraInvio').val();
   if (message) {
-    var messaggio = $('.template-messaggio > #template').clone();
-    messaggio.addClass('stilemessaggio');
-    messaggio.find('#message-text').text(message);
-    var dt = new Date();
-    var time = dt.getHours() + ":" + dt.getMinutes();
-    messaggio.find('#message-time').text(time);
-    var target = $('.messaggi.active').append(messaggio);
+  var messaggio = $('.template-messaggio > #template').clone();
+  messaggio.addClass('stilemessaggio');
+  messaggio.find('#message-text').text(message);
+  var dt = new Date();
+  var time = dt.getHours() + ":" + dt.getMinutes();
+  messaggio.find('#message-time').text(time);
+  var target = $('.messaggi.active').append(messaggio);
+  }
+}
+function addMyLastMessage(){
+  var message =$('#barraInvio').val();
+  if (message) {
+  var ultimoMex = $('.template-ultimo-messaggio > p').clone();
+  ultimoMex.text(message);
+  var targetUltimoMex = $('.contatto.active > .dati-interlocutore > .ultimo-messaggio').append(ultimoMex);
   }
 }
 function pressInvioMsg (){
   if (event.which == 13) {
     addMessage();
+    addMyLastMessage();
     var message =$('#barraInvio').val();
     if (message) {
       $('#barraInvio').val("");
       setTimeout(function(){
+      $('.contatto.active > .dati-interlocutore > .ultimo-messaggio > p').remove();
       addRisposta();
       },1000);
     }
@@ -78,6 +91,14 @@ function init() {
   $('.messaggi').on('click', '.delete-message', function() {
     console.log(this);
     $(this).parent('.info-messaggi').parent('.stilemessaggio').remove();
+  });
+  $('.messaggi').on('click', '.fa-angle-down', function() {
+    console.log(this);
+    $(this).next('.info-messaggi-ricevuti').slideToggle(100);
+  });
+  $('.messaggi').on('click', '.delete-message', function() {
+    console.log(this);
+    $(this).parent('.info-messaggi-ricevuti').parent('.stilerisposta').remove();
   });
   $('.contatto').click(clickUtente);
   ricercaPerNome();
