@@ -52,13 +52,17 @@ function addMyLastMessage(){
 }
 function pressInvioMsg (){
   if (event.which == 13) {
+
+    if (($('.contatto.active > .dati-interlocutore > .ultimo-messaggio >p').length > 0)) {
+      $('.contatto.active > .dati-interlocutore > .ultimo-messaggio > p').remove();
+    }
     addMessage();
     addMyLastMessage();
+
     var message =$('#barraInvio').val();
     if (message) {
       $('#barraInvio').val("");
       setTimeout(function(){
-      $('.contatto.active > .dati-interlocutore > .ultimo-messaggio > p').remove();
       addRisposta();
       },1000);
     }
