@@ -45,9 +45,21 @@ function addMessage(){
 function addMyLastMessage(){
   var message =$('#barraInvio').val();
   if (message) {
-  var ultimoMex = $('.template-ultimo-messaggio > p').clone();
-  ultimoMex.text(message);
-  var targetUltimoMex = $('.contatto.active > .dati-interlocutore > .ultimo-messaggio').append(ultimoMex);
+  if (message.length > 20){
+    var arrayMessaggioAbbrevviato =[];
+  for (var i = 0; i < 20; i++) {
+    arrayMessaggioAbbrevviato.push(message[i]);
+  }
+    console.log( arrayMessaggioAbbrevviato);
+    var messaggioAbbrevviato = arrayMessaggioAbbrevviato.join('');
+    var ultimoMex = $('.template-ultimo-messaggio > p').clone();
+    ultimoMex.text(messaggioAbbrevviato + '...');
+    var targetUltimoMex = $('.contatto.active > .dati-interlocutore > .ultimo-messaggio').append(ultimoMex)
+  } else {
+    var ultimoMex = $('.template-ultimo-messaggio > p').clone();
+    ultimoMex.text(message);
+    var targetUltimoMex = $('.contatto.active > .dati-interlocutore > .ultimo-messaggio').append(ultimoMex);
+  }
   }
 }
 function pressInvioMsg (){
