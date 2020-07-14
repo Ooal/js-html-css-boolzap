@@ -1,18 +1,13 @@
 /*ricerca user*/
-function ricercaPerNome(){
-  var input;
-  var valore;
-  var filtro;
-  var lista;
-  var voci;
+ function ricercaPerNome(){
   var x;
   var testo;
-  input = document.getElementById("barraRicerca");
-  valore = document.getElementById('barraRicerca').value;
-  filtro = input.value.toUpperCase();
-  lista = document.getElementById("contatti");
-  classi =lista.getElementsByClassName("contatto");
-  voci = lista.getElementsByTagName("h4");
+  var input = document.getElementById("barraRicerca");
+  var valore = document.getElementById('barraRicerca').value;
+  var filtro = input.value.toUpperCase();
+  var lista = document.getElementById("contatti");
+  var classi =lista.getElementsByClassName("contatto");
+  var voci = lista.getElementsByTagName("h4");
   for (i = 0; i < voci.length; i++) {
     x = lista.getElementsByTagName("h4")[i];
     testo = x.textContent || x.innerText;
@@ -22,8 +17,7 @@ function ricercaPerNome(){
       classi[i].style.display = "none";
     }
   }
-}
-
+ }
 /*ricerca user*/
 
 
@@ -35,9 +29,13 @@ function addRisposta(){
 }
 function addMessage(){
   var message =$('#barraInvio').val();
-  if (message != "") {
-    var messaggio = $('.template-messaggio > p').clone();
-    messaggio.addClass('stilemessaggio').text(message);
+  if (message) {
+    var messaggio = $('.template-messaggio > #template').clone();
+    messaggio.addClass('stilemessaggio');
+    messaggio.find('#message-text').text(message);
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes();
+    messaggio.find('#message-time').text(time);
     var target = $('.messaggi.active').append(messaggio);
   }
 }
@@ -45,10 +43,10 @@ function pressInvioMsg (){
   if (event.which == 13) {
     addMessage();
     var message =$('#barraInvio').val();
-    if (message != "") {
+    if (message) {
       $('#barraInvio').val("");
       setTimeout(function(){
-        addRisposta();
+      addRisposta();
       },1000);
     }
   }
@@ -67,13 +65,18 @@ function clickUtente(){
 }
 /*cambia chat*/
 
+/*cambia chat*/
 
 
 
 
 function init() {
+  /*$('.stilemessaggio .fa-angle-down').click(function() {
+    console.log('ciao');
+    $(this).children('.info-messaggi').toggle();
+  }*/
   $('.contatto').click(clickUtente);
   ricercaPerNome();
-  $('#barraInvio').keydown(pressInvioMsg);
+  $('#barraInvio').keyup(pressInvioMsg);
 }
 $(document).ready(init);

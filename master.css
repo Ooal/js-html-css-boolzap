@@ -32,7 +32,7 @@ body::before{
 p {
   color: #9e9e9e;
 }
-h4{
+h4, h6{
   color: #606060;
 }
 .user {
@@ -47,7 +47,7 @@ h4{
   margin-right: 15px;
 }
 .imgUtente {
-  width: 28px;
+  width: 51px;
 }
 .icon {
   padding: 0 10px;
@@ -125,6 +125,7 @@ h4{
   border: none;
   border-radius: 50px;
   color: #9e9e9e;
+  cursor: pointer;
 }
 #cercaUser i {
   position: absolute;
@@ -144,6 +145,7 @@ h4{
  display: flex;
  align-items: center;
  justify-content: space-between;
+ cursor: pointer;
 }
 .contatto.active {
   background-color: #ededed;
@@ -198,8 +200,8 @@ h4{
   border: none;
   border-radius: 50px;
   color: #9e9e9e;
+  cursor: pointer;
 }
-
 .stilerisposta {
   border-radius: 5px;
   padding: 10px;
@@ -208,8 +210,49 @@ h4{
   margin: 10px 0;
 }
 .stilemessaggio {
+  position: relative;
   border-radius: 5px;
   padding: 10px;
+  padding-right: 28px;
   background-color: #d5f9ba;
   margin: 10px 0;
+}
+.info-messaggi {
+  width: 150px;
+  background: white;
+  position: absolute;
+  border-radius: 2px;
+  top: 34px;
+  right: 0px;
+  padding: 10px 10px;
+  z-index: 3;
+  display: none;
+  filter: drop-shadow(1px 9px 9px #c1c1c1);
+}
+.delete-message span {
+  font-size: 13px;
+  padding: 3px;
+  cursor: pointer;
+}
+.info span {
+  font-size: 13px;
+  padding: 3px;
+}
+.fa-angle-down {
+  position: absolute;
+  top: 13px;
+  right: 11px;
+  z-index: 3;
+  color: #9e9e9e;
+  cursor: pointer;
+  display: none;
+}
+.stilemessaggio:hover .fa-angle-down{
+  display: block;
+}
+#message-time {
+  position: absolute;
+  top: 28px;
+  right: 6px;
+  font-size: 8px;
 }
