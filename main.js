@@ -52,13 +52,11 @@ function addMyLastMessage(){
 }
 function pressInvioMsg (){
   if (event.which == 13) {
-
     if (($('.contatto.active > .dati-interlocutore > .ultimo-messaggio >p').length > 0)) {
       $('.contatto.active > .dati-interlocutore > .ultimo-messaggio > p').remove();
     }
     addMessage();
     addMyLastMessage();
-
     var message =$('#barraInvio').val();
     if (message) {
       $('#barraInvio').val("");
@@ -95,6 +93,7 @@ function init() {
   $('.messaggi').on('click', '.delete-message', function() {
     console.log(this);
     $(this).parent('.info-messaggi').parent('.stilemessaggio').remove();
+    $('.contatto.active > .dati-interlocutore > .ultimo-messaggio > p').remove();
   });
   $('.messaggi').on('click', '.fa-angle-down', function() {
     console.log(this);
